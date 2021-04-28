@@ -19,5 +19,10 @@ RSpec.describe Trail do
       trail1 = Trail.new({name: 'Grand Wash', length: '2.2 miles', level: :easy})
       expect(trail1.length).to eq('2.2 miles')
     end
+
+    it 'has a level' do
+      trail1 = Trail.new({name: 'Grand Wash', length: '2.2 miles', level: :easy})
+      expect(trail1.level).to eq(:easy)
+    end
   end
 end
