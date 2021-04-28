@@ -9,9 +9,15 @@ RSpec.describe Trail do
       trail1 = Trail.new({name: 'Grand Wash', length: '2.2 miles', level: :easy})
       expect(trail1).to be_an_instance_of(Trail)
     end
+
     it 'has a name' do
       trail1 = Trail.new({name: 'Grand Wash', length: '2.2 miles', level: :easy})
       expect(trail1.name).to eq('Grand Wash')
+    end
+
+    it 'has a length' do
+      trail1 = Trail.new({name: 'Grand Wash', length: '2.2 miles', level: :easy})
+      expect(trail1.length).to eq('2.2 miles')
     end
   end
 end
