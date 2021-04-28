@@ -19,5 +19,10 @@ RSpec.describe Hiker do
       hiker = Hiker.new('Dora', :moderate)
       expect(hiker.experience_level).to eq(:moderate)
     end
+
+    it 'starts without snacks' do
+      hiker = Hiker.new('Dora', :moderate)
+      expect(hiker.snacks).to eq({})
+    end
   end
 end
