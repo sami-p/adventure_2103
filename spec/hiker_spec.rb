@@ -9,5 +9,10 @@ RSpec.describe Hiker do
       hiker = Hiker.new('Dora', :moderate)
       expect(hiker).to be_an_instance_of(Hiker)
     end
+
+    it 'has a name' do
+      hiker = Hiker.new('Dora', :moderate)
+      expect(hiker.name).to eq('Dora')
+    end
   end
 end
