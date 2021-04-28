@@ -35,5 +35,17 @@ RSpec.describe Hiker do
 
       expect(hiker.snacks).to eq({"water"=>1, "trail mix"=>3})
     end
+
+    it 'can accumulate already packed snacks' do
+      hiker = Hiker.new('Dora', :moderate)
+
+      hiker.pack('water', 1)
+      hiker.pack('trail mix', 3)
+      expect(hiker.snacks).to eq({"water"=>1, "trail mix"=>3})
+
+      hiker.pack('water', 1)
+      expect(hiker.snacks).to eq({"water"=>2, "trail mix"=>3})
+
+    end
   end
 end
