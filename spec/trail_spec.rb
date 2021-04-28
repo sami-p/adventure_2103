@@ -25,4 +25,11 @@ RSpec.describe Trail do
       expect(trail1.level).to eq(:easy)
     end
   end
+
+  describe 'can make another trail' do
+    it 'exists' do
+      trail2 = Trail.new({name: 'Cohab Canyon', length: '1.7 miles', level: :moderate})
+      expect(trail2).to be_an_instance_of(Trail)
+    end
+  end
 end
