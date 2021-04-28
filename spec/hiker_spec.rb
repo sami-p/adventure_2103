@@ -45,7 +45,13 @@ RSpec.describe Hiker do
 
       hiker.pack('water', 1)
       expect(hiker.snacks).to eq({"water"=>2, "trail mix"=>3})
+    end
+  end
 
+  describe '#parks_visited' do
+    it 'starts with no parks visited' do
+      hiker = Hiker.new('Dora', :moderate)
+      expect(hiker.parks_visited).to eq([])
     end
   end
 end
