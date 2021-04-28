@@ -14,5 +14,10 @@ RSpec.describe Hiker do
       hiker = Hiker.new('Dora', :moderate)
       expect(hiker.name).to eq('Dora')
     end
+
+    it 'has an experience leve' do
+      hiker = Hiker.new('Dora', :moderate)
+      expect(hiker.experience_level).to eq(:moderate)
+    end
   end
 end
