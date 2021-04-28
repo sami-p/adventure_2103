@@ -60,7 +60,11 @@ RSpec.describe Park do
       park1.add_trail(trail2)
       park1.add_trail(trail3)
 
+      hiker = Hiker.new('Dora', :moderate)
+      hiker.visit(park1)
+
       expect(park1.trails).to eq([trail1, trail2, trail3])
+      expect(park1.trails_shorter_than(2.5)).to eq([trail1, trail2])
     end
 
     it 'adds trails to park 2' do
@@ -69,10 +73,13 @@ RSpec.describe Park do
       trail4 = Trail.new({name: "Queen's/Navajo Loop", length: '2.9 miles', level: :moderate})
       trail5 = Trail.new({name: 'Rim Trail', length: '11 miles', level: :easy})
       trail6 = Trail.new({name: 'Tower Bridge', length: '3 miles', level: :moderate})
-      
+
       park2.add_trail(trail4)
       park2.add_trail(trail5)
       park2.add_trail(trail6)
+
+      hiker = Hiker.new('Dora', :moderate)
+      hiker.visit(park2)
 
       expect(park2.trails).to eq([trail4, trail5, trail6])
     end
