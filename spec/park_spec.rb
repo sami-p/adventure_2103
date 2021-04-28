@@ -9,5 +9,10 @@ RSpec.describe Park do
       park1 = Park.new('Capitol Reef')
       expect(park1).to be_an_instance_of(Park)
     end
+
+    it 'has a name' do
+      park1 = Park.new('Capitol Reef')
+      expect(park1.name).to eq('Capitol Reef')
+    end
   end
 end
