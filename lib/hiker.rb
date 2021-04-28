@@ -6,10 +6,13 @@ class Hiker
   def initialize(name, experience_level)
     @name = name
     @experience_level = experience_level
-    @snacks = {}
+    @snacks = Hash.new(0)
   end
 
   def pack(item, amount)
-    @snacks[item] = amount
+    if snacks.keys.include?(item)
+      snacks[item] = snacks[item] + amount
+    else @snacks[item] = amount
+    end
   end
 end
