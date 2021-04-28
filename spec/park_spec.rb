@@ -32,5 +32,19 @@ RSpec.describe Park do
 
       expect(park1.trails).to eq([trail1, trail2])
     end
+
+    it 'can create other instance of park' do
+      park2 = Park.new('Bryce Canyon')
+      expect(park2).to be_an_instance_of(Park)
+    end
+
+    it 'can #add_trail to different instance of park' do
+      park2 = Park.new('Bryce Canyon')
+      trail3 = Trail.new({name: 'Tower Bridge', length: '3.0 miles', level: :moderate})
+
+      park2.add_trail(trail3)
+
+      expect(park2.trails).to eq([trail3])
+    end
   end
 end
