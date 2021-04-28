@@ -77,11 +77,12 @@ RSpec.describe Park do
       park2.add_trail(trail4)
       park2.add_trail(trail5)
       park2.add_trail(trail6)
-
+      
       hiker = Hiker.new('Dora', :moderate)
       hiker.visit(park2)
 
       expect(park2.trails).to eq([trail4, trail5, trail6])
+      expect(park2.trails_shorter_than(2.5)).to eq([])
     end
   end
 end

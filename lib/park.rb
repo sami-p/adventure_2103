@@ -15,7 +15,7 @@ class Park
 
   def trails_shorter_than(distance)
     @trails.each do |trail|
-      if trail.length.to_i < distance
+      if trail.length.to_f < distance
         @length_trails << trail
       end
     end
