@@ -14,5 +14,10 @@ RSpec.describe Park do
       park1 = Park.new('Capitol Reef')
       expect(park1.name).to eq('Capitol Reef')
     end
+
+    it 'can have trails' do
+      park1 = Park.new('Capitol Reef')
+      expect(park1.trails).to eq([])
+    end
   end
 end
